@@ -52,15 +52,15 @@ export const blogPosts = [
   },
 ];
 
-export const DisplayBlog  = ({id, tittle, description, image, date}) => {
+export const DisplayBlog  = ({id, title, description, image, date}) => {
     return (
         <Link to={`/blogs/${id}`}> 
         <div className="blog-card">
             <div className="blog-image">
-                <img src={image} alt={tittle} />
+                <img src={image} alt={title} />
             </div>
             <div className="blog-content">
-                <h3>{tittle}</h3>
+                <h3>{title}</h3>
                 <p>{description}</p>
                 <p>{date}</p>
             </div>

@@ -1,19 +1,19 @@
 // import {dash} from "../components";
 import { Routes, Route } from "react-router-dom";
-import { Home, BlogComponent, OneBlogComponent  } from ".";
+import { Home, BlogComponent, OneBlogComponent, NavBar} from "./components";
 
- const StartPoint = () => {
 
-  const data = {
+export const StartPoint = () => {
+
+const data = {
         title: "PITSI KAGISHO",
         description: "MY FIRST EVER BLOG APP",
     }
   return (
-
     <>
       <NavBar />
       <Routes>
-        <Route path="/Home" element={<Home title ={data.title} />}/>
+        <Route path="/" element={<Home title ={data.title} />}/>
         <Route path="/blogs" element={<BlogComponent />}/>
         <Route path=":id" element={<OneBlogComponent />}/>
       </Routes>

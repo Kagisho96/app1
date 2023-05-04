@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 
-export const OneBlockComponent = () => {
+export const OneBlogComponent = () => {
   const { id} = useParams()
   return (
     <div>
-      <h1> Blog {id}</h1>
+      <h1> {id}</h1>
     </div>
   );
 };
