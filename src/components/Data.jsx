@@ -1,5 +1,8 @@
-export const DataCollector = () => {
+import { Link } from "react-router-dom";
+
+export const Data = () => {
     return <>
+    <Link to={`/register`}></Link>
     <form>
         <input type="text" id="name" name="name" />
         <input type="text" id="email" name="email" />
@@ -7,7 +10,6 @@ export const DataCollector = () => {
         <input type="text" id="address" name="address" />
         
     </form>  
-    
- id=""    </>
+    </>
   
 };

@@ -78,7 +78,11 @@ export const BlogComponent = () => {
       {!id ? (
         <>
           <div className="blog-posts">
-            {blogPosts.map((blog) => DisplayBlog(blog))}
+            {blogPosts.map((blog) => (
+              <div key={blog.id}>
+                {DisplayBlog({ ...blog, key: blog.id})}
+              </div>
+            ))}
           </div>
         </>
       ) : (
