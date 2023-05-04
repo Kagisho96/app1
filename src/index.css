@@ -1,7 +1,12 @@
 .root{
   background-color: antiquewhite;
   margin: 5px;
+  padding: 20px;
 }
+
+
+/* ############################################# DATA.JSX  ############################# */
+
 
 .navigation{
   margin-right: 15px;
@@ -16,6 +21,7 @@
     content: "";
     opacity: 1;
     transition: all 0.3s; 
+    
 }
 
 .navigation:hover{
@@ -35,7 +41,105 @@
 }
 
 .nav{
-  background: #72797a;
+  background: #a6aeaf;
   color: white;
   padding: 15px;
+}
+
+
+#registration{
+    background-color: antiquewhite;
+    color: #141414;
+    padding: 5rem;
+    margin-top: 4rem;
+    margin-left: 15rem;
+    width: 44rem;
+    height: 28rem;
+    /* background-image: linear-gradient(#44a08d,#093637); */
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px #8888;
+}
+
+#fieldset input{
+    width: 20rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+}
+
+#submitButtonData{
+      margin-top: 2.5rem;
+    font-size: 17px;
+    font-weight: 600;
+    width: 20rem;
+    height: 2rem;
+    margin-left: 10rem;
+    border-radius: 50px;
+}
+
+#submitButtonData:hover{
+  background-color: antiquewhite;
+}
+
+
+
+/* ################################################################################################### */
+
+/* Styles for the about page */
+
+.about > article > section {
+    text-align: justify;
+
+    /* Columns Layout */
+    column-count: 3;
+    column-gap: 5rem;
+}
+
+.about p:first-child:first-letter /* Picks out first letter only for drop cap effect */ {
+    font-size: 300%;
+    float: left;
+    margin: 0 0.5rem 0 0;
+    line-height: .8;
+    color: #aaa;
+}
+
+.about p {
+    text-indent: 3rem;
+}
+
+.about p:first-child /* Prevents text indenting after drop cap */ {
+    text-indent: 0;
+    margin-top: 0;
+}
+
+.about blockquote {
+    font-size: 1.2em;
+    padding: 0 0 0 6rem;
+    margin: 0;
+    font-style: italic;
+    position: relative;
+}
+
+.about blockquote:before {
+    content: '\201C';
+    position: absolute;
+    font-size: 10rem;
+    font-family: serif;
+    left: 0;
+    top: -1rem;
+    line-height: 1;
+}
+
+/* For small screens revert back to normal layout */
+@media screen and (max-width: 960px) {
+    .about > article > section {
+        column-count: 1;
+    }
+    
+    .about p:first-child:first-letter {
+        font-size: inherit;
+        float: inherit;
+        margin: inherit;
+        line-height: inherit;
+        color: inherit;
+    }
 }
