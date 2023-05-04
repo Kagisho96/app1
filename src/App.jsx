@@ -1,7 +1,5 @@
-// import {dash} from "../components";
 import { Routes, Route } from "react-router-dom";
-import { Home, BlogComponent, OneBlogComponent, NavBar, Data} from "./components";
-import { About } from "./components/About";
+import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About} from "./components";
 
 
 export const StartPoint = () => {
@@ -14,7 +12,7 @@ const data = {
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home title ={data.title} />}/>
+        <Route path="/" element={<Home title ={data.title} description={data.description}/>}/>
         <Route path="/blogs" element={<BlogComponent />}/>
         <Route path=":id" element={<OneBlogComponent />}/>
         <Route path="/register" element={<Data />}/>
