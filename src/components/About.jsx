@@ -4,8 +4,8 @@ export const About = () => {
     return(
         <>
         <Link to={`/about`}></Link>
-        <section class="page-section about">
-            <article class="container">
+        <section className="page-section about">
+            <article className="container">
                 <h1>ContosoConf brings web designers and developers together</h1>
                 <section>
                     <p>
