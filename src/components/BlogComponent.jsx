@@ -54,18 +54,20 @@ export const blogPosts = [
 
 export const DisplayBlog  = ({id, title, description, image, date}) => {
     return (
-        <Link to={`/blogs/${id}`}> 
+        
         <div className="blog-card">
+            <h3>{title}</h3>
+            <Link to={`/blogs/${id}`}> 
             <div className="blog-image">
                 <img src={image} alt={title} />
             </div>
+             </Link>
             <div className="blog-content">
-                <h3>{title}</h3>
                 <p>{description}</p>
                 <p>{date}</p>
             </div>
         </div>
-        </Link>
+       
         );
   
 };
