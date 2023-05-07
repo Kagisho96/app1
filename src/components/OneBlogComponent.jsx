@@ -3,14 +3,15 @@ import { blogPosts } from "./BlogComponent";
 
 export const OneBlogComponent = () => {
   const { id} = useParams()
-  const blogPosts = blogPosts.find((blog) => blog.id === parseInt(id)) 
+  const blogPost = blogPosts.find((blog) => blog.id === parseInt(id))
   return (
     <div>
-      <h1>{id}</h1>
-      <h3>{blogPosts.title}</h3>
-      <img src={blogPosts.image} alt={blogPosts.title} />
-      <p>{blogPosts.description}</p>
-      <p>{blogPosts.date}</p>
+      <h1> BLOG-POST {id}</h1>
+      <h3>{blogPost.title}</h3>
+      <img src={blogPost.image} alt={blogPosts.title} />
+      <p>{blogPost.description}</p>
+      <p>{blogPost.date}</p>
     </div>
   );
+
 };

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About} from "./components";
+import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About, Footer} from "./components";
 // import "tailwindcss/tailwind.css";
 
 
@@ -19,6 +19,7 @@ const data = {
         <Route path="/register" element={<Data />}/>
         <Route path="/about" element={<About />}/>
       </Routes>
+      <Footer />
     
     </>
   );
