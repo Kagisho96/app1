@@ -168,9 +168,51 @@
     padding: 1rem;
     border-radius: 5px;
     background-color: #FFF;
-    width: 40%;
+    width: 60%;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 .blog-image img{
     border-radius: 15px;
+}
+.blog-content {
+    padding: 2rem;
+    width: auto;
+}
+
+
+
+
+
+
+
+
+/* ############################## FOOTER ############################### */
+
+.footer {
+    padding: 2rem;
+    display: inline;
+    text-align: center;
+}
+
+.footer-title, .icons{
+    display: inline-block;
+}
+
+.icons{
+    display: flex;
+    text-align: end;
+    justify-content: center;
+}
+
+.icons a{
+    display: inline-block;
+    padding: 5px;
 }
