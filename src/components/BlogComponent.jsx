@@ -1,4 +1,5 @@
 import { Link, useParams, Outlet } from "react-router-dom";
+// import { bill, kagiso } from '../'
 
 
 export const blogPosts = [
@@ -8,7 +9,7 @@ export const blogPosts = [
     description:
       "In this blog, I'll be sharing my personal experiences and insights on life, love, and everything in between. Join me on this journey of self-discovery as we explore the depths of the human psyche and uncover the secrets to living a fulfilling life.",
     date: "2020-01-01",
-    image: "https://picsum.photos/id/100/200/300",
+    image: "https://picsum.photos/id/100/200/300",    //<img src={bill} alt="pic" className="w-[32px] h-[32px]" />
   },
   {
     id: 2,

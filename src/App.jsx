@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About, Footer} from "./components";
-
-// import "tailwindcss/tailwind.css";
+import "tailwindcss/tailwind.css";
 
 
 export const StartPoint = () => {

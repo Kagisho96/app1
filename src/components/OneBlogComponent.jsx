@@ -5,7 +5,7 @@ export const OneBlogComponent = () => {
   const { id} = useParams()
   const blogPost = blogPosts.find((blog) => blog.id === parseInt(id))
   return (
-    <div>
+    <div className="OneBlogComponent">
       <h1> BLOG-POST {id}</h1>
       <h3>{blogPost.title}</h3>
       <img src={blogPost.image} alt={blogPosts.title} />

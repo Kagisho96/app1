@@ -1,12 +1,9 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
-
-
-
-
+@tailwind utilities;
+/* 
 .root{
-  background-color: antiquewhite;
+  background-color: rgb(0, 0, 0);
   margin: 5px;
   padding: 20px;
   --black-gradient: linear-gradient(
@@ -20,7 +17,7 @@
 }
 
 
-/* ############################################# DATA.JSX  ############################# */
+/* ############################################# DATA.JSX  ############################# 
 
 
 .navigation{
@@ -70,10 +67,10 @@
     width: 44rem;
     height: 28rem;
     /* background-image: linear-gradient(#44a08d,#093637); */
-    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px #8888;
-}
+    /* box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px #8888; */
+/* } */
 
-#fieldset input{
+/* #fieldset input{
     width: 20rem;
     height: 2rem;
     margin-top: 1.5rem;
@@ -92,7 +89,7 @@
 
 #submitButtonData:hover{
   background-color: antiquewhite;
-}
+} */
 
 
 
@@ -100,40 +97,40 @@
 
 /* Styles for the about page */
 
-.about > article > section {
-    text-align: justify;
+/* .about > article > section {
+    text-align: justify; */
 
     /* Columns Layout */
-    column-count: 3;
+    /* column-count: 3;
     column-gap: 5rem;
-}
+} */
 
-.about p:first-child:first-letter /* Picks out first letter only for drop cap effect */ {
-    font-size: 300%;
+/* .about p:first-child:first-letter Picks out first letter only for drop cap effect {
+    /* font-size: 300%;
     float: left;
     margin: 0 0.5rem 0 0;
     line-height: .8;
     color: #aaa;
-}
+} */ 
 
-.about p {
+/* .about p {
     text-indent: 3rem;
-}
+} */
 
-.about p:first-child /* Prevents text indenting after drop cap */ {
-    text-indent: 0;
-    margin-top: 0;
-}
+/* .about p:first-child Prevents text indenting after drop cap { */
+    /* text-indent: 0;
+    margin-top: 0; */
+/* } */
 
-.about blockquote {
+/* .about blockquote {
     font-size: 1.2em;
     padding: 0 0 0 6rem;
     margin: 0;
     font-style: italic;
     position: relative;
-}
+} */
 
-.about blockquote:before {
+/* .about blockquote:before {
     content: '\201C';
     position: absolute;
     font-size: 10rem;
@@ -141,10 +138,10 @@
     left: 0;
     top: -1rem;
     line-height: 1;
-}
+} */
 
 /* For small screens revert back to normal layout */
-@media screen and (max-width: 960px) {
+/* @media screen and (max-width: 960px) {
     .about > article > section {
         column-count: 1;
     }
@@ -156,13 +153,13 @@
         line-height: inherit;
         color: inherit;
     }
-}
+} */
 
 
 
 
 /* ######################################### BLOGCOMPONENT ######################################### */
-
+/* 
 .blog-card{
     margin: 2rem;
     padding: 1rem;
@@ -188,7 +185,7 @@
 }
 
 
-
+ */
 
 
 
@@ -196,7 +193,7 @@
 
 /* ############################## FOOTER ############################### */
 
-.footer {
+/* .footer {
     padding: 2rem;
     display: inline;
     text-align: center;
@@ -215,4 +212,17 @@
 .icons a{
     display: inline-block;
     padding: 5px;
+} */
+
+
+/* ########################## OneBlogComponent ####################### */
+/* .OneBlogComponent{
+    width: 50%;
 }
+
+.OneBlogComponent img{
+    width: 25%;
+    height: 20%;
+    border-radius: 50%
+
+}  */
