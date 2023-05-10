@@ -57,14 +57,16 @@ export const DisplayBlog  = ({id, title, description, image, date}) => {
     return (
         <>
 
-          <div className="blog-card">
+          <div className="gap-y-4 text-l border-gray-200 pd-5 box-content pl-20 pr-20">
             <Link to={`/blogs/${id}`}> 
-            <div className="blog-image">
+            <h3 className="ml-3 font-bold">{title}</h3>
+            <br />
+            <div className="h-30 w-30 rounded-lg">
                 <img src={image} alt={title} />
             </div>
              </Link>
-            <div className="blog-content">
-                <h3>{title}</h3>
+             <br />
+            <div className="ml-3">
                 <p>{description}</p>
                 <p><b>{date}</b></p>  
             </div>
@@ -97,5 +99,7 @@ export const BlogComponent = () => {
         <Outlet />
       )}
     </div>
+    
   );
 };
+

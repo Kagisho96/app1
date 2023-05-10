@@ -1,9 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About, Footer} from "./components";
+import { Home, BlogComponent, OneBlogComponent, NavBar, Data, About, Footer, AddBlogPost} from "./components";
 import "tailwindcss/tailwind.css";
+import healthcare from '/healthcare.jpg';
 
 
 export const StartPoint = () => {
+
+  const styles = {
+    backgroundImage: `url(${healthcare})`,
+    backgroundSize: 'cover',
+    // backgroundPosition: 'center',
+    // minHeight: '100vh',
+  };
 
 const data = {
         title: "PITSI KAGISHO",
@@ -11,6 +19,7 @@ const data = {
     }
   return (
     <>
+    <div >
       <NavBar />
       <Routes>
         <Route path="/" element={<Home title ={data.title} description={data.description}/>}/>
@@ -18,9 +27,10 @@ const data = {
         <Route path="blogs/:id" element={<OneBlogComponent />}/>
         <Route path="/register" element={<Data />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/addBlog" element={<AddBlogPost/>} />
       </Routes>
       <Footer />
-    
+    </div>   
     </>
   );
 
