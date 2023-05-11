@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+// import { Firebase } from "./Firebase"
 
 
 
@@ -28,12 +29,21 @@ export const Data = () => {
 
     const newMessage = `You're now registered Mr ${event.target.name.value} ${event.target.surname.value} `;
     const userData = {name, surname, email, phone, address};
+    // const db = firebase.database();
+    // db.ref("users").push(userData); // write the data to the "users" collection in Firebase
     setList(prevList => [ ...prevList, userData]);
     localStorage.setItem('list', JSON.stringify(list));
     // list.push(userData);
     console.log(list);
     event.target.reset();
     window.alert(newMessage);
+    // setMessage(newMessage);
+    // setName("");
+    // setSurname("");
+    // setEmail("");
+    // setPhone("");
+    // setAddress("");
+    event.target.reset();
   };
 
   return (
@@ -83,7 +93,7 @@ export const AddBlogPost = () => {
   })
 
   const formatText = (text)=>{
-    return text.split("\n")
+    return text.split(",")
   }
 const handlChange = (event) => {
   event.preventDefault();

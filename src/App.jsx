@@ -6,12 +6,12 @@ import healthcare from '/healthcare.jpg';
 
 export const StartPoint = () => {
 
-  const styles = {
-    backgroundImage: `url(${healthcare})`,
-    backgroundSize: 'cover',
-    // backgroundPosition: 'center',
-    // minHeight: '100vh',
-  };
+  // const styles = {
+  //   backgroundImage: `url(${healthcare})`,
+  //   backgroundSize: 'cover',
+  //   // backgroundPosition: 'center',
+  //   // minHeight: '100vh',
+  // };
 
 const data = {
         title: "PITSI KAGISHO",
@@ -19,7 +19,6 @@ const data = {
     }
   return (
     <>
-    <div >
       <NavBar />
       <Routes>
         <Route path="/" element={<Home title ={data.title} description={data.description}/>}/>
@@ -29,8 +28,7 @@ const data = {
         <Route path="/about" element={<About />}/>
         <Route path="/addBlog" element={<AddBlogPost/>} />
       </Routes>
-      <Footer />
-    </div>   
+      <Footer />  
     </>
   );
 
