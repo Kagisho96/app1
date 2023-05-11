@@ -1,50 +1,74 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-// import { Firebase } from "./Firebase"
+import {initializeApp } from "firebase/app"
+import {getFirestore, collection, addDoc, onSnapshot} from "firebase/firestore"
+
+
+// Firebase configurations
+const firebaseConfig = {
+  apiKey: "AIzaSyCNcqogtkV2d3EKES9Czzl4bB486s3jStw",
+  authDomain: "agritech-app-70ee6.firebaseapp.com",
+  projectId: "agritech-app-70ee6",
+  storageBucket: "agritech-app-70ee6.appspot.com",
+  messagingSenderId: "221466055006",
+  appId: "1:221466055006:web:9672d714626a58a7f2bfcf"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 
 
 export const Data = () => {
     <Link to={`/register`}></Link>
-
-    // let list = [];
+    // Defining state variables 
     const [message, setMessage] = useState('');
     const [name, setName] = useState('');
     const [surname, setSurname] = useState ('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
+    const [password, setPassword] = useState('');
     const [list, setList] = useState([]);
 
+    const handleSubmit = async (event) => {
+    event.preventDefault();  
+    const userData = {name, surname, email, phone, address, password};
 
-    useEffect(() => {
-        const  data = localStorage.getItem('list'); 
-        if(data) {
-            setList(JSON.parse(data));
-        }
-    }, []);
-
-    const handleSubmit = (event) => {
-    event.preventDefault();    
+    await addDoc(collection(db, "list"),userData);
+    console.log("Document written to firebase");
 
     const newMessage = `You're now registered Mr ${event.target.name.value} ${event.target.surname.value} `;
-    const userData = {name, surname, email, phone, address};
-    // const db = firebase.database();
-    // db.ref("users").push(userData); // write the data to the "users" collection in Firebase
-    setList(prevList => [ ...prevList, userData]);
-    localStorage.setItem('list', JSON.stringify(list));
-    // list.push(userData);
-    console.log(list);
-    event.target.reset();
     window.alert(newMessage);
-    // setMessage(newMessage);
-    // setName("");
-    // setSurname("");
-    // setEmail("");
-    // setPhone("");
-    // setAddress("");
+
+    // Clearing the inputs fields
+    setName("");
+    setSurname("");
+    setEmail("");
+    setPhone("");
+    setAddress("");
     event.target.reset();
   };
+
+
+  // Retrieving data from Firebase
+  useEffect(() => {
+    const userDataRef = collection(db, "list");
+
+    const unsubscribe = onSnapshot(userDataRef, (querySnapshot) => {
+      const data = [];
+      querySnapshot.forEach((doc) => {
+        data.push({
+          id: doc.id,  // Include document ID in data
+        ...doc.data()
+        });
+      });
+      setList(data);
+    })
+    return () => unsubscribe();
+    
+  }, [db]);
+  // console.log(list);
 
   return (
 
@@ -62,6 +86,10 @@ export const Data = () => {
     <div className="mb-4">
       <label htmlFor="email" className="block font-medium mb-2">E-MAIL:</label>
       <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="email@gmail.com" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+    </div>
+    <div className="mb-4">
+      <label htmlFor="password" className="block font-medium mb-2">PASSWORD:</label>
+      <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="password" className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
     </div>
     <div className="mb-4">
       <label htmlFor="phone" className="block font-medium mb-2">PHONE NUMBER:</label>
@@ -84,57 +112,3 @@ export const Data = () => {
   );
   
 };
-
-export const AddBlogPost = () => {
-  const [postData, setPostData] = useState({
-    title: "",
-    description: "",
-    body: []
-  })
-
-  const formatText = (text)=>{
-    return text.split(",")
-  }
-const handlChange = (event) => {
-  event.preventDefault();
-  const { name, value } = event.target;
-  // console.log(name, value);
-  setPostData({
-    ...postData,
-      [name]: name==="body"? formatText(value): value
-    })
-}
-const postBlog = (event) => {
-  event.preventDefault();
-  console.log(postData);
-}
-  return <>
-    <Link to={`/blok`}></Link>
-    <form class="max-w-2xl mx-auto mt-6 p-4 bg-white rounded-lg shadow-md" onChange={handlChange} onSubmit={postBlog}>
-  <div class="mb-4">
-    <label class="block text-gray-700 font-bold mb-2" htmlFor="title">
-      Blog title
-    </label>
-    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="title" name='title' placeholder='Title' />
-  </div>
-
-  <div class="mb-4">
-    <label class="block text-gray-700 font-bold mb-2" htmlFor="description">
-      Blog description
-    </label>
-    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="description" name='description' placeholder='Description'></textarea>
-  </div>
-
-  <div class="mb-4">
-    <label class="block text-gray-700 font-bold mb-2" htmlFor="body">
-      Blog Body
-    </label>
-    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="body" name='body' placeholder='Blog post body, separated by commas'></textarea>
-  </div>
-
-  <div class="flex items-center justify-between">
-    <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Post Blog" />
-  </div>
-</form>
-  </>
-}

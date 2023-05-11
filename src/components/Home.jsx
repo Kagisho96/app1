@@ -25,7 +25,7 @@ export const Home = ({title, description}) => {
       <img className="inline-block h-12 w-12 rounded-full ring-2 ring-white" src="https://picsum.photos/id/100/200/300" alt=""/>
     </div>
     <div className="mt-3 text-sm font-medium">
-      <a href="#" class="text-blue-500">+ 4 others</a>
+      <a href="#" className="text-blue-500">+ 4 others</a>
     </div>
   </div>
  

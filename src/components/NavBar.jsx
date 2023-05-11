@@ -26,7 +26,7 @@ export const NavBar = () => {
       </li>
       <li>
         <NavLink
-          className="text-lg text-gray-700 hover:text-gray-100 font-semibold"
+          className="text-lg text-gray-900 hover:text-gray-100 font-semibold"
           to="/register"
         >
           REGISTER
