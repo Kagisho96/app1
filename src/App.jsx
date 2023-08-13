@@ -6,13 +6,6 @@ import healthcare from '/healthcare.jpg';
 
 export const StartPoint = () => {
 
-  // const styles = {
-  //   backgroundImage: `url(${healthcare})`,
-  //   backgroundSize: 'cover',
-  //   // backgroundPosition: 'center',
-  //   // minHeight: '100vh',
-  // };
-
 const data = {
         title: "PITSI KAGISHO",
         description: "MY FIRST EVER BLOG APP",
