@@ -1,7 +1,6 @@
 import { Link, useParams, Outlet } from "react-router-dom";
 // import { bill, kagiso } from '../'
 
-
 export const blogPosts = [
   {
     id: 1,
@@ -9,7 +8,7 @@ export const blogPosts = [
     description:
       "In this blog, I'll be sharing my personal experiences and insights on life, love, and everything in between. Join me on this journey of self-discovery as we explore the depths of the human psyche and uncover the secrets to living a fulfilling life.",
     date: "2020-01-01",
-    image: "https://picsum.photos/id/100/200/300",    //<img src={bill} alt="pic" className="w-[32px] h-[32px]" />
+    image: "https://picsum.photos/id/100/200/300",
   },
   {
     id: 2,
@@ -52,34 +51,30 @@ export const blogPosts = [
     image: "https://picsum.photos/id/100/200/300",
   },
 ];
-
-export const DisplayBlog  = ({id, title, description, image, date}) => {
-    return (
-        <>
-
-          <div className="gap-y-4 text-l border-gray-200 pd-5 box-content pl-20 pr-20">
-            <Link to={`/blogs/${id}`}> 
-            <h3 className="ml-3 font-bold">{title}</h3>
-            <br />
-            <div className="h-30 w-30 rounded-lg">
-                <img src={image} alt={title} />
-            </div>
-             </Link>
-             <br />
-            <div className="ml-3">
-                <p>{description}</p>
-                <p><b>{date}</b></p>  
-            </div>
-        </div>
+ 
+export const DisplayBlog = ({ id, title, description, image, date }) => {
+  return (
+    <>
+      <div className="gap-y-4 text-l border-gray-200 pd-5 box-content pl-20 pr-20">
+        <Link to={`/blogs/${id}`}>
+          <h3 className="ml-3 font-bold">{title}</h3>
+          <br />
+          <div className="h-30 w-30 rounded-lg">
+            <img src={image} alt={title} />
+          </div>
+        </Link>
         <br />
-        
-        </>
-
-
-        );
-  
+        <div className="ml-3">
+          <p>{description}</p>
+          <p>
+            <b>{date}</b>
+          </p>
+        </div>
+      </div>
+      <br />
+    </>
+  );
 };
-
 
 export const BlogComponent = () => {
   const { id } = useParams();
@@ -89,9 +84,7 @@ export const BlogComponent = () => {
         <>
           <div className="blog-posts">
             {blogPosts.map((blog) => (
-              <div key={blog.id}>
-                {DisplayBlog({ ...blog, key: blog.id})}
-              </div>
+              <div key={blog.id}>{DisplayBlog({ ...blog, key: blog.id })}</div>
             ))}
           </div>
         </>
@@ -99,7 +92,5 @@ export const BlogComponent = () => {
         <Outlet />
       )}
     </div>
-    
   );
 };
-
